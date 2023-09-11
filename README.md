@@ -73,18 +73,48 @@ Para configurar e rodar o ambiente de desenvolvimento com base no repositório c
 
 ### Rodar o Ambiente de Desenvolvimento
 
-9. Após instalar as dependências, você pode rodar o ambiente de desenvolvimento. As instruções exatas podem variar dependendo do tipo de aplicação que você está desenvolvendo (web, aplicativo, etc.). 
+Execute o aplicativo FastAPI com Uvicorn:
+Use o comando uvicorn para iniciar o servidor Uvicorn e executar o aplicativo FastAPI. Substitua "api:app" pelo nome do arquivo Python que contém sua instância FastAPI (app é o nome comum, mas pode ser diferente, dependendo do seu projeto).
 
-   Por exemplo, se estiver trabalhando em um projeto Python com um servidor web, você pode usar o seguinte comando para iniciar o servidor:
+```
+uvicorn api:app --host 0.0.0.0 --port 8000
 
-   ```bash
-   python app.py
-   ```
+```
+api:app indica que você está executando o aplicativo definido em api.py (ou qualquer que seja o nome do seu arquivo) e exportado como app.
 
-   Certifique-se de consultar a documentação do projeto ou as instruções específicas do aplicativo para saber como rodá-lo em seu ambiente de desenvolvimento.
+--host 0.0.0.0 permite que o servidor escute em todas as interfaces disponíveis.
 
-Essas são instruções gerais para configurar um ambiente de desenvolvimento com base em um repositório clonado. Certifique-se de ajustar as etapas de acordo com as necessidades específicas do seu projeto e seguir as instruções do README do repositório, se houver, para obter informações adicionais sobre como configurar e rodar o projeto.
+--port 8000 define a porta na qual o servidor irá escutar. Você pode alterar a porta conforme necessário.
 
 ## Treinamento do modelo
 
 O treinamento do modelo está melhor descrito no notebook. Em suma, foi realizada a exploração dos dados com a análise estatística e de gráficos, o one-hot encoding dos valores categóricos, a normalização dos valores numéricos e o treinamento com trẽs regressores populares: Random Forest, Adaboost e KNN. A métrica utilizada foi o erro médio absoluto, e o modelo que performou melhor foi o Random Forest.
+
+## Documentação da API
+### Uso
+
+Para usar esta API, envie uma solicitação POST para `/predict/` com os seguintes parâmetros JSON:
+
+- `gender` (string): Gênero da pessoa (deve ser "male" ou "female").
+- `age` (inteiro): Idade da pessoa (deve estar entre 12 e 100 anos).
+- `annual_income` (inteiro): Renda anual estimada da pessoa.
+
+A API retornará uma resposta JSON com a previsão de renda anual.
+
+## Exemplo de Solicitação
+
+```json
+{
+    "gender": "female",
+    "age": 30,
+    "annual_income": 50000
+}
+```
+
+## Exemplo de resposta
+
+```json
+{
+    "prediction": 34.2,
+}
+```
