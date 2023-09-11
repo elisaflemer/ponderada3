@@ -15,25 +15,4 @@ Para acessar a documentação da API, acesse http://localhost:8000/redoc;
 
 ## Treinamento do modelo
 
-Neste tutorial, você encontrará um exemplo abrangente de treinamento de um modelo de regressão em Python. O objetivo principal é demonstrar como conduzir diversas etapas cruciais ao trabalhar com dados e modelos de aprendizado de máquina. Aqui está uma visão geral das principais etapas:
-
-Carregando os Dados:
-A primeira etapa envolve a importação das bibliotecas necessárias e a leitura dos dados de um arquivo CSV. Neste exemplo, usamos a biblioteca Pandas para carregar um conjunto de dados que contém informações sobre clientes de um shopping center. Isso é fundamental, pois os dados são a base de qualquer modelo de aprendizado de máquina.
-
-Exploração dos Dados:
-Uma análise inicial dos dados é crucial para entender seu conteúdo. Nessa fase, exibimos as primeiras linhas do conjunto de dados e calculamos estatísticas resumidas. Essa exploração inicial nos ajuda a identificar tendências, outliers e entender a natureza dos dados.
-
-Visualização de Dados:
-A visualização é uma ferramenta poderosa para compreender os dados. Utilizamos gráficos, como pairplots para identificar relações entre variáveis, heatmap de correlação para avaliar as associações entre elas e histogramas para examinar as distribuições de características específicas. Essas visualizações ajudam a criar uma imagem mais clara dos dados e a tomar decisões informadas sobre o modelo.
-
-Pré-processamento dos Dados:
-Nesta etapa, realizamos manipulações nos dados para prepará-los para o treinamento do modelo. Isso inclui a renomeação de colunas para facilitar a referência e a codificação de variáveis categóricas usando one-hot encoding. Essas transformações são necessárias para que os dados sejam compatíveis com os algoritmos de aprendizado de máquina.
-
-Normalização dos Dados:
-A normalização é importante para garantir que todas as features tenham a mesma escala, o que pode melhorar o desempenho do modelo. Isso é especialmente relevante quando se trabalha com algoritmos sensíveis à escala dos dados. Neste exemplo, aplicamos a normalização Min-Max às colunas, exceto à variável de destino.
-
-Treinamento do Modelo:
-A parte central do tutorial aborda o treinamento de três modelos de regressão diferentes: Random Forest Regressor, AdaBoost Regressor e K-Nearest Neighbors (KNN) Regressor. Esses modelos são treinados para prever a variável de destino (Score) com base nas outras features. O objetivo é encontrar um modelo que melhor se ajuste aos dados.
-
-Salvar o Modelo Treinado:
-Por fim, demonstramos como salvar o modelo treinado em um arquivo. Isso é importante para que o modelo possa ser reutilizado sem a necessidade de treiná-lo novamente toda vez que for necessário fazer previsões com base nos dados. Essa etapa é fundamental para a implementação prática de modelos de aprendizado de máquina em aplicações do mundo real.
+O treinamento do modelo está melhor descrito no notebook. Em suma, foi realizada a exploração dos dados com a análise estatística e de gráficos, o one-hot encoding dos valores categóricos, a normalização dos valores numéricos e o treinamento com trẽs regressores populares: Random Forest, Adaboost e KNN. A métrica utilizada foi o erro médio absoluto, e o modelo que performou melhor foi o Random Forest.
