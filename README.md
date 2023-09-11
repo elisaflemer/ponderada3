@@ -6,8 +6,12 @@ A atividade ponderada 3 solicitava o treinamento de um modelo preditivo e o seu 
 Para executar a aplicação, rode o seguinte comando:
 
 ```
-
+docker run -d -p 8000:8000 elisaflemer/ponderada3:1.0
 ```
+
+Para acessar a interface, acesse http://localhost:8000;
+
+Para acessar a documentação da API, acesse http://localhost:8000/redoc;
 
 ## Treinamento do modelo
 
